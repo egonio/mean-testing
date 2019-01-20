@@ -24,12 +24,21 @@ export class PostsService {
   }
 
   addPost(title: string, content: string) {
-    const post: Post = { id: null, title: title, content: content };
+    const post: Post = { _id: null, title: title, content: content };
     this.http.post(this.URL + '/api/posts', post)
     .subscribe(responseData => {
       console.log(responseData);
-      this.posts.push(post);
-      this.postsUpdated.next([...this.posts]);
+      this.getPost();
     });
+
+  }
+
+  deletePost(id: string) {
+    this.http
+      .delete(this.URL + '/api/posts/' + id)
+      .subscribe(() => {
+        console.log('Deleted!');
+        this.getPost();
+      });
   }
 }
