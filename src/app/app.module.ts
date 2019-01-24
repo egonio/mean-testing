@@ -1,9 +1,10 @@
+import { AppRoutingModule } from './app-routing.module';
 import { PostsService } from './posts/post.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule, MatButtonModule, MatToolbarModule, MatExpansionModule } from '@angular/material';
+import { MatInputModule, MatButtonModule, MatToolbarModule, MatExpansionModule, MatProgressSpinnerModule } from '@angular/material';
 import { MatCardModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -29,7 +30,9 @@ import {  HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+    MatProgressSpinnerModule,
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]
